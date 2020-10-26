@@ -5,7 +5,7 @@
 //#include <iostream>
 
 class Node {
-private:
+protected:
 	long* _Node;
 public:
     Node();

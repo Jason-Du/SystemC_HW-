@@ -5,12 +5,12 @@
 //#include <iostream>
 //using namespace std;
 #include <stdio.h>
+#include <iostream> 
 
 
 class List : public Node{
-private:
+protected:
 	unsigned int length;
-	long* pointer1;
 public:
     List();
 	~List();
@@ -22,7 +22,7 @@ public:
 	unsigned int getLength();
 	long int getElement(unsigned int pos);
 	
-	/*
+	
 	List& operator=(const List&);
 	
 	List operator+(const List&);
@@ -32,9 +32,7 @@ public:
 	List operator--();
 	List operator--(int);
 
-	friend ostream& operator<<(ostream &, List);
-	friend istream& operator>>(istream &, List&);
-
-*/
+	friend std::ostream& operator<<(std::ostream &, List);
+	friend std::istream& operator>>(std::istream &, List&);
 };
 #endif
