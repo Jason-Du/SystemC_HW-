@@ -3,7 +3,6 @@
 #include <assert.h>
 #include <cstddef> 
 #include <stdio.h>
-#include <fstream>
 using namespace std;
 
 List::List():Node()
@@ -46,34 +45,7 @@ List::~List()
 }
 
 
-// Assignment operator
 
-List& List::operator=(const List& other)
-{
-	if (this != &other) 
-	{ // if the same one, do nothing
-		delete [] _Node;
-		length=other.length;
-		if (length > 0)
-		{
-			_Node=new long int[length];
-			//delete [] _Node; // _Node may not be NULL
-		
-			//_Node = new int[length];
-			assert(_Node != 0);
-			for (unsigned int i= 0; i< length; i++)
-			{
-				_Node[i]= other._Node[i];
-			}
-		}
-		else
-		{
-			_Node = NULL;
-			length=0;
-		}
-	}
-	return *this; // return this object
-}
 
 /*
 
@@ -89,6 +61,7 @@ int List::setLength(unsigned int _length)
 	if(length==0)
 	{
 		_Node=reCreate(_length);
+		length=_length;
 		return 1;
 	}
 	else
@@ -114,9 +87,6 @@ int List::setElement(unsigned int pos, long val)
 		
 	{	
 		*(_Node+pos)=val;
-	/*pointer1=get_array();
-		*(pointer1+pos)=val;
-		*/
 		return 0;
 	}
 }
@@ -128,10 +98,7 @@ long int List::getElement(unsigned int pos)
 		return -99999;
 	}
 	else
-	{	/*
-		pointer1=get_array();
-		return *(pointer1+pos);
-		*/
+	{	
 		return*(_Node+pos);
 	}
 
@@ -148,6 +115,32 @@ long int List::getElement(unsigned int pos)
 ◦ friend istream& operator>>(istream, List &);
 */
 
+// Assignment operator
+
+List& List::operator=(const List& other)
+{
+	if (this != &other) 
+	{ // if the same one, do nothing
+		delete [] _Node;
+		length=other.length;
+		if (length > 0)
+		{
+			_Node=new long int[length];
+			//delete [] _Node; // _Node may not be NULL
+			assert(_Node != 0);
+			for (unsigned int i= 0; i< length; i++)
+			{
+				_Node[i]= other._Node[i];
+			}
+		}
+		else
+		{
+			_Node = NULL;
+			length=0;
+		}
+	}
+	return *this; // return this object
+}
 List List::operator+(const List &other) {
     unsigned int loop =length< other.length ? length:other.length;
     // create a return object is required

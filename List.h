@@ -1,10 +1,7 @@
 #ifndef LIST
 #define LIST
 #include "Node.h"
-//#include <stdio.h>
-//#include <iostream>
-//using namespace std;
-#include <stdio.h>
+
 #include <iostream> 
 
 

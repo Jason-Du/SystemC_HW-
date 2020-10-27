@@ -1,0 +1,53 @@
+get length List test1                                          4
+copy file to List test1 content                                55112233
+constructor test List test2  content                           
+get length List test2                                          0
+copy test by using  operator=     test2=test1;                 55112233
+List test2                                                     55112233
+get length List test2                                          4
+copy test by constuctor    List test3(test1);                  55112233
+List test4 length                                              0
+set length test  include recreate finction test                
+List test4 length                                              4
+getElement test  List test1 index     0              55
+getElement test  List test1 index     1              11
+getElement test  List test1 index     2              22
+getElement test  List test1 index     3              33
+copy test by set element and get element test                  
+List test4                                                     55112233
+                                                               
+                                                               
+++ operation    test2=test1++                                  
+assign operation first                                         
+List test1                                                     56122334
+List test2                                                     55112233
+++(long) operation   test2=++test1                             
+add operation  first                                           
+List test1                                                     57132435
+List test2                                                     57132435
+                                                               
+                                                               
++= operation   test1+=test2                                    
+List test1                                                     114264870
+List test2                                                     57132435
+                                                               
+-- operation test1=test2--   test1=test2--                     
+assign operation  first                                        
+List test1                                                     57132435
+List test2                                                     56122334
+--(long) operation   test1=--test2                             
+minus operation  first                                         
+List test1                                                     55112233
+List test2                                                     55112233
+                                                               
+                                                               
++ operation test1 add test2 to test3                           
+List test1                                                     55112233
+List test2                                                     55112233
+List test3                                                     110224466
+                                                               
+                                                               
+deconstructor test  List test1                                 
+List test1 length                                              0
+List test1 content                                             
+
